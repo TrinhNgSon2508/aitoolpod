@@ -910,7 +910,7 @@
         <div class="slider-image high-res"></div>
         
         <!-- Blurry (Before) foreground overlay -->
-        <div class="slider-image low-res" id="beforeImage" style="width: 50%;"></div>
+        <div class="slider-image low-res" id="beforeImage" style="width: 100%; clip-path: inset(0 50% 0 0);"></div>
         
         <!-- Slider handle bar -->
         <div class="slider-handle" id="sliderHandle" style="left: 50%;">
@@ -1178,7 +1178,7 @@
       if (pos > 1) pos = 1;
       
       const percentage = pos * 100;
-      beforeImage.style.width = `${percentage}%`;
+      beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
       sliderHandle.style.left = `${percentage}%`;
     }
 
