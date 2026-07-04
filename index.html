@@ -42,11 +42,15 @@
       scroll-behavior: smooth;
     }
 
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-primary);
-      overflow-x: hidden;
       line-height: 1.6;
     }
 
@@ -744,18 +748,28 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
-      header { height: 64px; }
-      .logo-container img { height: 30px !important; }
-      .btn-header { padding: 8px 14px; font-size: 0.75rem; border-radius: 8px; }
-      .hero { padding-top: 120px; padding-bottom: 60px; }
-      .hero h1 { font-size: 1.85rem; line-height: 1.25; }
-      .hero p { font-size: 0.95rem; margin-bottom: 24px; }
+      header, header.scrolled { height: 60px; }
+      .logo-container img { height: 28px !important; display: block; }
+      .btn-header { padding: 6px 12px; font-size: 0.72rem; border-radius: 8px; }
+      .hero { padding-top: 100px; padding-bottom: 50px; }
+      .hero h1 { font-size: 1.65rem; line-height: 1.25; }
+      .hero p { font-size: 0.9rem; margin-bottom: 24px; }
+      .hero-cta { flex-direction: column; gap: 12px; width: 100%; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.9rem; }
+      .cta-wrapper { padding: 40px 16px; }
+      .cta-wrapper h2 { font-size: 1.65rem; }
+      .cta-wrapper p { font-size: 0.9rem; }
+      .cta-wrapper .hero-cta { width: 100%; }
       .slider-card { padding: 16px 12px; }
-      .slider-title { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 0.95rem; }
-      .slider-wrapper { height: 280px; }
+      .slider-title { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 0.9rem; }
+      .slider-wrapper { height: 260px; }
+      .slider-label { font-size: 0.65rem; padding: 4px 8px; bottom: 10px; }
+      .label-before { left: 10px; }
+      .label-after { right: 10px; }
       nav { display: none; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .footer-content { flex-direction: column; text-align: center; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+      .pricing-card { padding: 30px 20px; }
+      .footer-content { flex-direction: column; text-align: center; gap: 16px; }
     }
 
     /* ---------------- PAGE LOADER ---------------- */
@@ -866,10 +880,12 @@
     <div class="loader-sub" id="loaderStatus">INITIALIZING CORE ENGINE...</div>
   </div>
 
-  <!-- Background decorative light bubbles -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
+  <!-- Background decorative light bubbles (wrapped to prevent mobile overflow stretching) -->
+  <div class="ambient-glow-wrapper" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 0;">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+  </div>
 
   <!-- Header -->
   <header id="header">
