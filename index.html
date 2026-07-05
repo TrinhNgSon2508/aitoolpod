@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI TOOL POD - Công cụ xử lý hình ảnh AI chuyên nghiệp cho Print-on-Demand. Phóng to 4x, tách nền chi tiết cao, vector hóa SVG, nén ảnh in 300 DPI hàng loạt.">
-  <title>AI TOOL POD - Tối Ưu Hóa Ảnh Thiết Kế In Ấn Chuyên Nghiệp</title>
+  <title>AI TOOL POD</title>
+  <link rel="icon" type="image/png" href="logo.png">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +53,9 @@
       background-color: var(--bg-dark);
       color: var(--text-primary);
       line-height: 1.6;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
 
     /* Ambient glowing background circles */
@@ -206,8 +210,8 @@
       align-items: center;
       gap: 8px;
       padding: 6px 16px;
-      background: rgba(99, 102, 241, 0.08);
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      background: rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(99, 102, 241, 0.15);
       border-radius: 30px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -215,6 +219,92 @@
       margin-bottom: 28px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+      position: relative;
+      animation: pulseBadge 3s infinite alternate;
+    }
+    
+    @keyframes pulseBadge {
+      0% { border-color: rgba(99, 102, 241, 0.15); box-shadow: 0 0 10px rgba(99, 102, 241, 0.05); }
+      100% { border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
+    }
+
+    /* Floating Particles */
+    .floating-particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(3px);
+      z-index: 1;
+    }
+    
+    .particle-1 {
+      width: 8px;
+      height: 8px;
+      top: 15%;
+      left: 15%;
+      background: var(--color-primary);
+      animation: floatParticle 10s ease-in-out infinite alternate;
+      box-shadow: 0 0 10px var(--color-primary);
+    }
+    .particle-2 {
+      width: 12px;
+      height: 12px;
+      top: 40%;
+      right: 12%;
+      background: var(--color-accent);
+      animation: floatParticle 14s ease-in-out infinite alternate-reverse;
+      box-shadow: 0 0 15px var(--color-accent);
+    }
+    .particle-3 {
+      width: 6px;
+      height: 6px;
+      top: 70%;
+      left: 8%;
+      background: var(--color-emerald);
+      animation: floatParticle 8s ease-in-out infinite alternate;
+      box-shadow: 0 0 8px var(--color-emerald);
+    }
+    .particle-4 {
+      width: 10px;
+      height: 10px;
+      top: 35%;
+      right: 10%;
+      background: var(--color-primary);
+      animation: floatParticle 11s ease-in-out infinite alternate;
+      box-shadow: 0 0 12px var(--color-primary);
+    }
+    .particle-5 {
+      width: 7px;
+      height: 7px;
+      top: 55%;
+      left: 12%;
+      background: var(--color-accent);
+      animation: floatParticle 9s ease-in-out infinite alternate-reverse;
+      box-shadow: 0 0 10px var(--color-accent);
+    }
+    .particle-6 {
+      width: 9px;
+      height: 9px;
+      top: 75%;
+      right: 15%;
+      background: var(--color-emerald);
+      animation: floatParticle 13s ease-in-out infinite alternate;
+      box-shadow: 0 0 12px var(--color-emerald);
+    }
+    .particle-7 {
+      width: 5px;
+      height: 5px;
+      top: 90%;
+      left: 18%;
+      background: var(--color-primary);
+      animation: floatParticle 7s ease-in-out infinite alternate-reverse;
+      box-shadow: 0 0 8px var(--color-primary);
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+      100% { transform: translateY(-50px) translateX(25px) scale(1.2); opacity: 0.7; }
     }
 
     .hero h1 {
@@ -865,6 +955,186 @@
       0% { opacity: 0.4; }
       100% { opacity: 1; }
     }
+    
+    summary::-webkit-details-marker { display: none; }
+    summary { list-style: none; }
+
+    /* Floating Zalo Chat Widget */
+    .floating-zalo-chat {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 56px;
+      height: 56px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .zalo-icon-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0068ff 0%, #004ecc 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 104, 255, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 3;
+    }
+
+    .floating-zalo-chat:hover .zalo-icon-box {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 104, 255, 0.6);
+    }
+
+    /* Pulse Rings */
+    .zalo-pulse-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(0, 104, 255, 0.35);
+      z-index: 1;
+      animation: zaloPulse 2s infinite ease-out;
+    }
+
+    .ring-2 {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes zaloPulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    /* Tooltip */
+    .zalo-tooltip {
+      position: absolute;
+      right: 70px;
+      background: #0068ff;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      box-shadow: 0 4px 15px rgba(0, 104, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .floating-zalo-chat:hover .zalo-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Zalo Chat Panel */
+    .zalo-chat-panel {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 330px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(99, 102, 241, 0.1);
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .zalo-chat-panel.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .zalo-chat-header {
+      padding: 16px;
+      background: rgba(0, 104, 255, 0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .zalo-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gradient-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .zalo-online-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border: 2px solid var(--bg-dark);
+      border-radius: 50%;
+    }
+
+    .zalo-chat-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    .zalo-chat-bubble {
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      max-width: 90%;
+    }
+
+    .zalo-chat-bubble.admin {
+      background: rgba(255,255,255,0.03);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-top-left-radius: 2px;
+      align-self: flex-start;
+    }
+
+    .zalo-chat-bubble.admin a {
+      color: #0068ff;
+      text-decoration: underline;
+    }
+
+    .zalo-chat-footer {
+      padding: 12px 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.01);
+    }
   </style>
 </head>
 <body>
@@ -880,11 +1150,81 @@
     <div class="loader-sub" id="loaderStatus">INITIALIZING CORE ENGINE...</div>
   </div>
 
-  <!-- Background decorative light bubbles (wrapped to prevent mobile overflow stretching) -->
+  <!-- Background decorative light bubbles & glowing tech curves (wrapped to prevent mobile overflow stretching) -->
   <div class="ambient-glow-wrapper" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 0;">
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
     <div class="ambient-glow glow-3"></div>
+    
+    <!-- Tech Curves SVG -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1200px; opacity: 0.6;">
+      <svg width="100%" height="100%" viewBox="0 0 1440 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="techCurveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0" />
+            <stop offset="30%" stop-color="#6366f1" stop-opacity="0.35" />
+            <stop offset="70%" stop-color="#a855f7" stop-opacity="0.35" />
+            <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="techCurveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#10b981" stop-opacity="0" />
+            <stop offset="50%" stop-color="#a855f7" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+          </linearGradient>
+          <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="12" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        
+        <!-- Curve 1 (glowing purple-indigo curve) -->
+        <path d="M-100,250 C350,80 650,550 1050,150 C1250,-20 1450,220 1600,180" 
+              fill="none" stroke="url(#techCurveGrad1)" stroke-width="4" filter="url(#neonGlow)" />
+        
+        <!-- Curve 2 (dashed cyan-emerald curve) -->
+        <path d="M-50,400 C450,600 850,150 1150,700 C1350,950 1550,500 1650,600" 
+              fill="none" stroke="url(#techCurveGrad2)" stroke-width="2" stroke-dasharray="12, 16" filter="url(#neonGlow)" />
+
+        <!-- Curve 3 (subtle overlay line) -->
+        <path d="M-200,700 C250,900 750,400 1250,850 C1400,980 1550,700 1750,650" 
+              fill="none" stroke="url(#techCurveGrad1)" stroke-width="1.5" opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Tech Curves SVG 2 (Middle-Bottom Section) -->
+    <div style="position: absolute; top: 1800px; left: 0; width: 100%; height: 1200px; opacity: 0.5;">
+      <svg width="100%" height="100%" viewBox="0 0 1440 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="techCurveGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a855f7" stop-opacity="0" />
+            <stop offset="40%" stop-color="#06b6d4" stop-opacity="0.25" />
+            <stop offset="80%" stop-color="#6366f1" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+          </linearGradient>
+          <filter id="neonGlow2" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="12" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        
+        <!-- Curve 4 (glowing cyan-indigo curve) -->
+        <path d="M-50,600 C300,300 700,900 1100,400 C1300,150 1500,500 1600,450" 
+              fill="none" stroke="url(#techCurveGrad3)" stroke-width="3.5" filter="url(#neonGlow2)" />
+
+        <!-- Curve 5 (dashed overlay line) -->
+        <path d="M-100,800 C400,1000 800,500 1200,900" 
+              fill="none" stroke="url(#techCurveGrad3)" stroke-width="1.5" stroke-dasharray="8, 12" opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="floating-particle particle-1"></div>
+    <div class="floating-particle particle-2"></div>
+    <div class="floating-particle particle-3"></div>
+    <div class="floating-particle particle-4"></div>
+    <div class="floating-particle particle-5"></div>
+    <div class="floating-particle particle-6"></div>
+    <div class="floating-particle particle-7"></div>
   </div>
 
   <!-- Header -->
@@ -916,6 +1256,12 @@
           Tải Miễn Phí Cho Windows
         </a>
         <a href="#demo" class="btn-secondary">Xem Demo So Sánh</a>
+      </div>
+
+      <!-- Privacy Lock Badge -->
+      <div style="margin-top: 36px; display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); font-size: 0.85rem; color: var(--color-emerald);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <strong>Cam kết Bảo Mật 100%:</strong> Xử lý OFFLINE hoàn toàn trên máy tính của bạn, không tải hình lên server, chống lộ ý tưởng thiết kế.
       </div>
     </div>
   </section>
@@ -951,7 +1297,7 @@
     <div class="container">
       <div class="section-header">
         <h2>Sức Mạnh AI Xử Lý Thiết Kế Trọn Bộ</h2>
-        <p>Năm công cụ chuyên biệt giải quyết triệt để nỗi lo vỡ hình, lem viền, thiếu góc hay dung lượng quá lớn khi đem in áo thun, cốc, chăn ga khổ rộng.</p>
+        <p>Bốn công cụ chuyên biệt giải quyết triệt để nỗi lo vỡ hình, lem viền, thiếu góc hay dung lượng quá lớn khi đem in thiết kế.</p>
       </div>
 
       <div class="features-grid">
@@ -961,7 +1307,17 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           </div>
           <h3>Phóng To AI (Super Resolution)</h3>
-          <p>Sử dụng thuật toán Super Resolution tiên tiến (như 4x-UltraSharp) phóng to ảnh lên gấp 2 lần, 4 lần mà không làm mờ, ngược lại tái tạo từng sợi vải, nét chữ căng viền.</p>
+          <p>Phóng to ảnh x2, x4 siêu nét mà không làm bể hình nhờ thuật toán Super Resolution tiên tiến.</p>
+          
+          <details style="width: 100%; margin-top: 14px; cursor: pointer;">
+            <summary style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); outline: none; display: flex; align-items: center; gap: 6px; user-select: none;">
+              <span>👁️ Xem chi tiết các chế độ AI</span>
+            </summary>
+            <ul style="margin-top: 10px; margin-left: 16px; font-size: 0.78rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; list-style-type: disc; text-align: left; cursor: default;">
+              <li><strong>Denoise = 0.00 (Chỉ phóng - Khuyên dùng):</strong> Sử dụng RealESRGAN giữ nguyên pixel gốc sắc cạnh, tuyệt đối không bị mờ nhòe.</li>
+              <li><strong>Denoise &gt; 0.02 (Vẽ lại chi tiết):</strong> Sử dụng Stable Diffusion tái tạo chi tiết sâu, làm mịn và khử nhiễu cho ảnh chụp.</li>
+            </ul>
+          </details>
         </div>
 
         <!-- Feature 2 -->
@@ -970,7 +1326,19 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 6v12"></path><path d="M8 10h8"></path></svg>
           </div>
           <h3>Tách Nền AI Hàng Loạt</h3>
-          <p>Tách tóc tơ, viền áo cực kỳ chi tiết với các mô hình chuyên dụng như BiRefNet. Cho phép kéo thả và tách hàng loạt 15 ảnh cùng lúc sang định dạng PNG nền trong suốt.</p>
+          <p>Tách tóc tơ, viền áo cực kỳ chi tiết với các mô hình chuyên dụng sang định dạng PNG nền trong suốt.</p>
+          
+          <details style="width: 100%; margin-top: 14px; cursor: pointer;">
+            <summary style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); outline: none; display: flex; align-items: center; gap: 6px; user-select: none;">
+              <span>👁️ Xem chi tiết các chế độ AI</span>
+            </summary>
+            <ul style="margin-top: 10px; margin-left: 16px; font-size: 0.78rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; list-style-type: disc; text-align: left; cursor: default;">
+              <li><strong>birefnet-general (Khuyên dùng):</strong> Cân bằng tốt nhất, tối ưu cho hầu hết hình thiết kế áo thun.</li>
+              <li><strong>birefnet-portrait (Chuyên tách người):</strong> Cắt sắc nét đường viền cơ thể, chân dung người.</li>
+              <li><strong>birefnet-massive (Chất lượng cực đại):</strong> Tách lông thú, tóc tơ siêu mảnh hoặc họa tiết phức tạp.</li>
+              <li><strong>isnet-general-use (Nhanh & nhẹ):</strong> Xử lý siêu tốc, phù hợp tách nhanh số lượng lớn tơ tóc đơn giản.</li>
+            </ul>
+          </details>
         </div>
 
         <!-- Feature 3 -->
@@ -979,25 +1347,47 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
           </div>
           <h3>Vector Hóa AI (Export SVG)</h3>
-          <p>Chuyển đổi các hình ảnh đồ họa vẽ tay hoặc logo từ PNG/JPG sang file Vector dạng .svg sắc sảo, tự do phóng to hàng nghìn lần mà không bao giờ lo bể ảnh khi in lụa, in thêu.</p>
+          <p>Chuyển đổi hình ảnh PNG/JPG sang file Vector dạng .svg sắc sảo để in ấn phóng to vô lượng.</p>
+          
+          <details style="width: 100%; margin-top: 14px; cursor: pointer;">
+            <summary style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); outline: none; display: flex; align-items: center; gap: 6px; user-select: none;">
+              <span>👁️ Xem công nghệ tích hợp</span>
+            </summary>
+            <ul style="margin-top: 10px; margin-left: 16px; font-size: 0.78rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; list-style-type: disc; text-align: left; cursor: default;">
+              <li><strong>Xếp chồng nhị phân (Union-Stacked - Khuyên dùng):</strong> Cắt khít mảng màu, chống viền kép (halos) khi in thêu.</li>
+              <li><strong>Label Map Median Smoothing:</strong> Tự động lọc sạch các bụi màu rác cho hình phẳng mịn tuyệt đối.</li>
+            </ul>
+          </details>
         </div>
 
-        <!-- Feature 4 -->
-        <div class="glass-panel feature-card">
-          <div class="feature-icon-wrapper">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-          </div>
-          <h3>Tái Tạo & Vẽ Lại AI (Redraw & Outpaint)</h3>
-          <p>Vẽ lại một phần thiết kế bằng trí tuệ nhân tạo thông qua mô tả (Prompt), hoặc mở rộng viền ngoài (Outpainting) để tạo bố cục rộng hơn cho thiết kế in ấn mà không mất nét.</p>
-        </div>
-
-        <!-- Feature 5 -->
+        <!-- Feature 4 (Nén) -->
         <div class="glass-panel feature-card">
           <div class="feature-icon-wrapper">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6H4zm10 0h6v6h-6zM4 4h6v6H4zm10 0h6v6h-6z"></path></svg>
           </div>
           <h3>Nén Ảnh Smart 300 DPI</h3>
-          <p>Giảm dung lượng tệp tin từ 30% đến 50% bằng cách tối ưu hóa bảng màu thông minh, đồng thời ghim và khóa chặt thông số in 300 DPI. <strong>Mở miễn phí 100%</strong>.</p>
+          <p>Tối ưu hóa dung lượng tệp tin in ấn hàng loạt mà không làm suy hao chất lượng hiển thị mắt thường.</p>
+          
+          <details style="width: 100%; margin-top: 14px; cursor: pointer;">
+            <summary style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); outline: none; display: flex; align-items: center; gap: 6px; user-select: none;">
+              <span>👁️ Xem 3 chế độ nén nâng cao</span>
+            </summary>
+            <ul style="margin-top: 10px; margin-left: 16px; font-size: 0.78rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; list-style-type: disc; text-align: left; cursor: default;">
+              <li><strong>Nén TinyPNG 8-bit (Cho hình vẽ/Logo):</strong> Giảm 80% dung lượng, tối ưu nhất cho hình vẽ vector phẳng.</li>
+              <li><strong>Nén JPG 95% (Cho ảnh chụp - Khuyên dùng):</strong> Giảm 85% dung lượng cho ảnh chân dung, chống vỡ dải màu.</li>
+              <li><strong>Nén Lossless 24-bit (Giữ nguyên chất lượng):</strong> Giữ nguyên từng pixel gốc 24-bit của tệp PNG.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <!-- Coming Soon Banner -->
+      <div style="margin-top: 32px; text-align: center; display: flex; justify-content: center;">
+        <div class="glass-panel" style="padding: 14px 28px; display: inline-flex; align-items: center; gap: 12px; border-color: rgba(168, 85, 247, 0.2); border-radius: 12px;">
+          <span style="background: var(--gradient-bg); color: white; font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase;">Sắp ra mắt</span>
+          <span style="font-size: 0.82rem; color: var(--text-secondary);">
+            <strong>Tái Tạo & Vẽ Lại AI (Redraw & Outpaint):</strong> Công nghệ vẽ lại chi tiết qua mô tả và tự động mở rộng khổ in.
+          </span>
         </div>
       </div>
     </div>
@@ -1100,6 +1490,44 @@
     </div>
   </section>
 
+  <!-- System Requirements Section -->
+  <section class="pricing" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cấu Hình Máy Tính Yêu Cầu</h2>
+        <p>Phần mềm chạy offline và xử lý AI bằng chính sức mạnh phần cứng của bạn để bảo mật tối đa thiết kế.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto;">
+        <!-- Card 1: Cấu hình tối thiểu -->
+        <div class="glass-panel" style="padding: 30px 24px; text-align: left; border-radius: 16px;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+            💻 Cấu Hình Tối Thiểu
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Hệ điều hành:</strong> Windows 10/11 64-bit (Chưa hỗ trợ MacOS)</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Bộ nhớ RAM:</strong> Tối thiểu 8GB RAM</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Ổ cứng:</strong> Trống tối thiểu 10GB (Khuyên dùng ổ SSD)</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Đồ họa:</strong> Onboard hoặc GPU bất kỳ (Chạy được tính năng Tách nền nhẹ, Vector, Nén ảnh)</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Cấu hình khuyên dùng -->
+        <div class="glass-panel" style="padding: 30px 24px; text-align: left; border-color: var(--border-glow); box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15); border-radius: 16px;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+            🚀 Cấu Hình AI Khuyên Dùng
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Hệ điều hành:</strong> Windows 10/11 64-bit</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Bộ nhớ RAM:</strong> 16GB RAM trở lên</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Ổ cứng:</strong> SSD trống trên 15GB</span></li>
+            <li style="display: flex; gap: 6px;"><span style="color: var(--color-primary);">•</span> <span><strong>Card đồ họa:</strong> Card rời NVIDIA GeForce (VRAM từ 4GB - 6GB trở lên như GTX 1660, RTX 2060, RTX 3060,...)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section class="faq" id="faq">
     <div class="container">
@@ -1138,7 +1566,7 @@
             <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
           <div class="faq-answer">
-            Sau khi liên hệ và kích hoạt cước phí qua Zalo/Telegram của Admin, chúng tôi sẽ cấp một chuỗi mã key (ví dụ: `PREM-XXXX-XXXX`). Bạn chỉ cần copy mã này, dán vào màn hình kích hoạt khi mở app là hệ thống sẽ tự động đồng bộ thời hạn và phân cấp gói dịch vụ ngay lập tức.
+            Sau khi liên hệ và kích hoạt cước phí qua Zalo của Admin, chúng tôi sẽ cấp một chuỗi mã key (ví dụ: `PREM-XXXX-XXXX`). Bạn chỉ cần copy mã này, dán vào màn hình kích hoạt khi mở app là hệ thống sẽ tự động đồng bộ thời hạn và phân cấp gói dịch vụ ngay lập tức.
           </div>
         </div>
       </div>
@@ -1169,7 +1597,6 @@
       </div>
       <div class="footer-links">
         <a href="https://zalo.me/0978052730" target="_blank">Liên Hệ Admin Zalo</a>
-        <a href="https://t.me/your_telegram" target="_blank">Telegram Hỗ Trợ</a>
       </div>
     </div>
   </footer>
@@ -1288,6 +1715,125 @@
           statusEl.textContent = statusTexts[statusIdx];
         }
       }, 50);
+    });
+  </script>
+
+  <!-- Floating Zalo Contact Widget & Simulated Chat Box -->
+  <div class="floating-zalo-chat" id="zaloChatWidget" onclick="toggleZaloChat(event)" title="Nhắn tin hỗ trợ qua Zalo">
+    <!-- Pulsing background rings -->
+    <div class="zalo-pulse-ring ring-1"></div>
+    <div class="zalo-pulse-ring ring-2"></div>
+    
+    <!-- Zalo Icon Container -->
+    <div class="zalo-icon-box">
+      <!-- Clean speech bubble SVG representing Zalo/Chat -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 5.582 2 10c0 1.887.812 3.619 2.215 4.975l-.83 3.12a.75.75 0 0 0 1.05.864l3.585-1.72C9.176 17.702 10.559 18 12 18c5.523 0 10-3.582 10-8s-4.477-8-10-8zm-2.5 9.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm5 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" />
+      </svg>
+    </div>
+    
+    <!-- Chat tooltip badge -->
+    <span class="zalo-tooltip" id="zaloTooltip">Hỗ Trợ Zalo 24/7</span>
+  </div>
+
+  <!-- Simulated Zalo Chat Panel -->
+  <div class="zalo-chat-panel" id="zaloChatPanel" onclick="event.stopPropagation()">
+    <div class="zalo-chat-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="zalo-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <div class="zalo-online-dot"></div>
+        </div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.9rem; color: white; line-height: 1.2;">Hỗ Trợ AI TOOL POD</div>
+          <div style="font-size: 0.7rem; color: #10b981; display: flex; align-items: center; gap: 4px;">Đang hoạt động</div>
+        </div>
+      </div>
+      <button onclick="toggleZaloChat(event)" style="background: none; border: none; color: #94a3b8; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; transition: color 0.2s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    
+    <div class="zalo-chat-body">
+      <div class="zalo-chat-bubble admin">
+        Chào bạn! Điền nhanh thông tin vào biểu mẫu dưới đây, hệ thống sẽ soạn sẵn tin nhắn để bạn gửi Zalo hỗ trợ nhanh nhất nhé! ⚡
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+        <div>
+          <label style="display: block; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 4px;">Tên của bạn *</label>
+          <input type="text" id="zaloFormName" class="glass-input" placeholder="Ví dụ: Nguyễn Văn A" style="font-size: 0.75rem; padding: 8px 12px;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 4px;">SĐT / Zalo liên hệ *</label>
+          <input type="text" id="zaloFormPhone" class="glass-input" placeholder="Ví dụ: 0912345678" style="font-size: 0.75rem; padding: 8px 12px;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 4px;">Nội dung cần hỗ trợ *</label>
+          <textarea id="zaloFormMsg" class="glass-input" placeholder="Ví dụ: Tôi cần tư vấn nâng cấp lên gói PREMIUM..." style="font-size: 0.75rem; padding: 8px 12px; height: 60px; resize: none; font-family: inherit;"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="zalo-chat-footer">
+      <button onclick="submitZaloSimulatedForm()" class="neon-button-glow" id="zaloSubmitBtn" style="width: 100%; padding: 10px; font-size: 0.8rem; font-weight: 700; display: flex; justify-content: center; align-items: center; gap: 6px; cursor: pointer;">
+        <span>🚀 Gửi Yêu Cầu Qua Zalo</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function toggleZaloChat(event) {
+      if (event) event.stopPropagation();
+      const panel = document.getElementById('zaloChatPanel');
+      panel.classList.toggle('active');
+    }
+
+    async function submitZaloSimulatedForm() {
+      const name = document.getElementById('zaloFormName').value.trim();
+      const phone = document.getElementById('zaloFormPhone').value.trim();
+      const msg = document.getElementById('zaloFormMsg').value.trim();
+      const btn = document.getElementById('zaloSubmitBtn');
+
+      if (!name || !phone || !msg) {
+        alert('Vui lòng điền đầy đủ các thông tin có dấu sao (*)!');
+        return;
+      }
+
+      // Định dạng nội dung tin nhắn
+      const formattedText = `[HỖ TRỢ AI TOOL POD]\n- Khách hàng: ${name}\n- SĐT/Zalo: ${phone}\n- Nội dung cần hỗ trợ: ${msg}`;
+
+      try {
+        // Sao chép tin nhắn vào clipboard
+        await navigator.clipboard.writeText(formattedText);
+        
+        btn.disabled = true;
+        btn.innerHTML = '<span>✅ Đã copy! Đang mở Zalo...</span>';
+        
+        setTimeout(() => {
+          // Mở Zalo Admin
+          window.open('https://zalo.me/0978052730', '_blank');
+          
+          // Reset nút bấm và các trường nhập
+          btn.disabled = false;
+          btn.innerHTML = '<span>🚀 Gửi Yêu Cầu Qua Zalo</span>';
+          document.getElementById('zaloFormName').value = '';
+          document.getElementById('zaloFormPhone').value = '';
+          document.getElementById('zaloFormMsg').value = '';
+          
+          // Đóng khung chat
+          toggleZaloChat();
+        }, 1500);
+      } catch (err) {
+        alert('Có lỗi khi sao chép tin nhắn hỗ trợ. Đang chuyển tiếp bạn đến Zalo của Admin...');
+        window.open('https://zalo.me/0978052730', '_blank');
+      }
+    }
+
+    // Đóng khung chat khi click ra ngoài vùng panel
+    document.addEventListener('click', () => {
+      const panel = document.getElementById('zaloChatPanel');
+      if (panel && panel.classList.contains('active')) {
+        panel.classList.remove('active');
+      }
     });
   </script>
 </body>
