@@ -1394,6 +1394,263 @@
     </div>
   </section>
 
+  <!-- User Guide Section -->
+  <style>
+    .guide-section {
+      padding: 100px 0;
+      position: relative;
+      background: rgba(0,0,0,0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+    .guide-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .guide-tab-btn {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guide-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    .guide-tab-btn.active {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: var(--color-primary);
+      color: white;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    }
+    .guide-content-wrapper {
+      position: relative;
+      min-height: 280px;
+    }
+    .guide-tab-content {
+      display: none;
+      animation: tabFadeIn 0.5s ease forwards;
+    }
+    .guide-tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @keyframes tabFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .guide-step-card {
+      position: relative;
+      padding: 36px 24px 28px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .guide-step-num {
+      position: absolute;
+      top: -20px;
+      left: 24px;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+    }
+    .guide-step-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .guide-step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .guide-step-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+      .guide-tab-content.active {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .guide-step-card {
+        padding-top: 36px;
+      }
+    }
+  </style>
+
+  <section class="guide-section" id="guide">
+    <div class="container">
+      <div class="section-header">
+        <h2>Hướng Dẫn Sử Dụng Nhanh</h2>
+        <p>Làm chủ toàn bộ các công cụ AI trong phần mềm chỉ với 3 bước thao tác cực kỳ đơn giản.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="guide-tabs">
+        <button class="guide-tab-btn active" onclick="switchGuideTab(this, 'upscale')">
+          <span>🔍</span> Phóng To AI
+        </button>
+        <button class="guide-tab-btn" onclick="switchGuideTab(this, 'bgremoval')">
+          <span>✂️</span> Tách Nền AI
+        </button>
+        <button class="guide-tab-btn" onclick="switchGuideTab(this, 'vector')">
+          <span>🎨</span> Vector Hóa SVG
+        </button>
+        <button class="guide-tab-btn" onclick="switchGuideTab(this, 'compress')">
+          <span>⚡</span> Nén Ảnh Smart
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="guide-content-wrapper">
+        
+        <!-- Tab 1: Phóng To AI -->
+        <div class="guide-tab-content active" id="guide-upscale">
+          <!-- Step 1 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">1</div>
+            <span class="guide-step-icon">📂</span>
+            <h3>Nhập hình ảnh</h3>
+            <p>Kéo và thả hình ảnh cần phóng to trực tiếp vào khung làm việc của phần mềm. Hỗ trợ đầy đủ các định dạng phổ biến như PNG, JPG, WEBP.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">2</div>
+            <span class="guide-step-icon">⚙️</span>
+            <h3>Thiết lập tỷ lệ & AI</h3>
+            <p>Lựa chọn tỷ lệ phóng to mong muốn (x2 hoặc x4). Sử dụng mô hình chuyên dụng <strong>4x-UltraSharp</strong> để tái tạo chi tiết in ấn sắc nét nhất.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">3</div>
+            <span class="guide-step-icon">🚀</span>
+            <h3>Bắt đầu xử lý</h3>
+            <p>Bấm nút <strong>"Phóng To Ảnh"</strong>. AI sẽ tự động tính toán, lấp đầy các điểm ảnh bị mờ và xuất tệp ảnh mới siêu sắc nét trong vài giây.</p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Tách Nền AI -->
+        <div class="guide-tab-content" id="guide-bgremoval">
+          <!-- Step 1 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">1</div>
+            <span class="guide-step-icon">🖼️</span>
+            <h3>Tải tệp tin hàng loạt</h3>
+            <p>Kéo thả một hoặc nhiều ảnh cùng lúc (lên đến 15 ảnh/lượt). Lựa chọn mô hình AI tối ưu phù hợp cho Vật thể (ISNet) hoặc Chân dung (BiRefNet).</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">2</div>
+            <span class="guide-step-icon">🎛️</span>
+            <h3>Tùy chỉnh viền & mượt</h3>
+            <p>Lựa chọn các tùy chọn nâng cao như tự động làm mịn đường cắt viền hoặc chuyển đổi xuất tệp ảnh sang PNG nền trong suốt tự động.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">3</div>
+            <span class="guide-step-icon">✨</span>
+            <h3>Xuất ảnh trong suốt</h3>
+            <p>Nhấp chuột vào nút <strong>"Tách Nền Hàng Loạt"</strong>. Hệ thống sẽ tự động bóc tách vật thể cực kỳ chi tiết đến từng sợi tóc và lưu vào thư mục.</p>
+          </div>
+        </div>
+
+        <!-- Tab 3: Vector Hóa SVG -->
+        <div class="guide-tab-content" id="guide-vector">
+          <!-- Step 1 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">1</div>
+            <span class="guide-step-icon">🎨</span>
+            <h3>Chọn ảnh Logo/Hình vẽ</h3>
+            <p>Nhập hình vẽ phẳng, logo hoặc hình vẽ có đường nét rõ ràng vào công cụ Vectorizer để đảm bảo thuật toán chuyển đổi tối ưu nhất.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">2</div>
+            <span class="guide-step-icon">🧩</span>
+            <h3>Chọn chế độ nối màu</h3>
+            <p>Chọn công nghệ xếp chồng màu <strong>Union-Stacked</strong> (chống hở viền màu khi in thêu) và bật lọc Median Smoothing để làm phẳng mịn các nét.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">3</div>
+            <span class="guide-step-icon">💾</span>
+            <h3>Lưu tệp Vector SVG</h3>
+            <p>Bấm nút <strong>"Vector Hóa"</strong> để chuyển đổi tức thì hình ảnh thành file vector `.svg`. Bạn có thể co giãn hình ảnh này vô hạn mà không vỡ hình.</p>
+          </div>
+        </div>
+
+        <!-- Tab 4: Nén Ảnh Smart -->
+        <div class="guide-tab-content" id="guide-compress">
+          <!-- Step 1 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">1</div>
+            <span class="guide-step-icon">📂</span>
+            <h3>Kéo thả cả thư mục</h3>
+            <p>Kéo và thả trực tiếp hàng loạt ảnh in ấn dung lượng nặng vào bảng điều khiển (không giới hạn số lượng và dung lượng tệp).</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">2</div>
+            <span class="guide-step-icon">📉</span>
+            <h3>Chọn thuật toán nén</h3>
+            <p>Chọn nén TinyPNG 8-bit (cho logo phẳng - giảm đến 80% dung lượng) hoặc JPG 95% (cho ảnh chuyển sắc mịn - giảm đến 85% dung lượng).</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="glass-panel guide-step-card">
+            <div class="guide-step-num">3</div>
+            <span class="guide-step-icon">🔋</span>
+            <h3>Tối ưu giữ 300 DPI</h3>
+            <p>Bấm nút <strong>"Bắt Đầu Nén"</strong> để thu nhỏ tối đa dung lượng tệp tin. Phần mềm cam kết bảo lưu nguyên vẹn số lượng pixel và chuẩn in 300 DPI.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- User Guide Switch Script -->
+  <script>
+    function switchGuideTab(element, tabId) {
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.guide-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      // Deactivate all contents
+      const contents = document.querySelectorAll('.guide-tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      // Find active button & content
+      element.classList.add('active');
+      document.getElementById('guide-' + tabId).classList.add('active');
+    }
+  </script>
+
   <!-- Pricing Section -->
   <section class="pricing" id="pricing">
     <div class="container">
